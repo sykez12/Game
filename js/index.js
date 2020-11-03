@@ -190,7 +190,7 @@ function check() {
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
     good = false;
 
-  if (playerOrder.length == 8 && good) {
+  if (playerOrder.length == 3 && good) {
     winGame();
   }
 
@@ -232,3 +232,9 @@ function winGame() {
   on = false;
   win = true;
 }
+
+
+
+
+
+
