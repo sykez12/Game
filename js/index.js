@@ -7,7 +7,6 @@ let turn;
 let good;
 let compTurn;
 let intervalId;
-let strict = false;
 let noise = true;
 let on = false;
 let win;
@@ -21,6 +20,7 @@ const strictButton = document.querySelector("#strict");
 const onButton = document.querySelector("#on");
 const startButton = document.querySelector("#start");
 
+//Buttons
 
 
 
