@@ -1,3 +1,5 @@
+//Variables
+
 let order = [];
 let playerOrder = [];
 let flash;
