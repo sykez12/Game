@@ -105,3 +105,59 @@ function clearColor() {
     bottomRight.style.backgroundColor = "darkblue";
 }
 
+topLeft.addEventListener('click', (event) => {
+  if (on) {
+    playerOrder.push(1);
+    check();
+    one();
+    if(!win) {
+      setTimeout(() => {
+        clearColor();
+      }, 300);
+    }
+  }
+})
+
+topRight.addEventListener('click', (event) => {
+  if (on) {
+    playerOrder.push(2);
+    check();
+    two();
+    if(!win) {
+      setTimeout(() => {
+        clearColor();
+      }, 300);
+    }
+  }
+})
+
+bottomLeft.addEventListener('click', (event) => {
+  if (on) {
+    playerOrder.push(3);
+    check();
+    three();
+    if(!win) {
+      setTimeout(() => {
+        clearColor();
+      }, 300);
+    }
+  }
+})
+
+bottomRight.addEventListener('click', (event) => {
+  if (on) {
+    playerOrder.push(4);
+    check();
+    four();
+    if(!win) {
+      setTimeout(() => {
+        clearColor();
+      }, 300);
+    }
+  }
+})
+
+function check() {
+    if (playerOrder[playerOrder.length - 1] !==order[playerOrder.length -1])
+}
+
