@@ -6,22 +6,22 @@
 
 .button {
   border-radius: 50% !important;
-  font-size: 1.5em;
-  background-color: lightgray;
+  font-size: 2em;
+  margin-left: 45px;
 }
 
 #switches {
   position: absolute;
   font-family: 'Original Surfer', cursive;
   margin-left: 26px;
-  margin-top: 110px;
+  margin-top: 100px;
 }
 
 .text2 {
   position: absolute;
   font-family: 'Original Surfer', cursive;
   margin-left: 83px;
-  margin-top: 197px;
+  margin-top: 202px;
 }
 
 .text1 {

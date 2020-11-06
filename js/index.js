@@ -105,6 +105,13 @@ function clearColor() {
     bottomRight.style.backgroundColor = "darkblue";
 }
 
+function flashColor() {
+  topLeft.style.backgroundColor = "lightgreen";
+  topRight.style.backgroundColor = "tomato";
+  bottomLeft.style.backgroundColor = "yellow";
+  bottomRight.style.backgroundColor = "lightskyblue";
+}
+
 topLeft.addEventListener('click', (event) => {
   if (on) {
     playerOrder.push(1);
@@ -158,6 +165,39 @@ bottomRight.addEventListener('click', (event) => {
 })
 
 function check() {
-    if (playerOrder[playerOrder.length - 1] !==order[playerOrder.length -1])
+  if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
+    good = false;
+
+  if (playerOrder.length == 3 && good) {
+    winGame();
+  }
+
+  if (good == false) {
+    flashColor();
+    turnCounter.innerHTML = "NO!";
+    setTimeout(() => {
+      turnCounter.innerHTML = turn;
+      clearColor();
+      play();
+    }, 800);
+
+    noise = false;
+  }
+
+  if (turn == playerOrder.length && good && !win) {
+    turn++;
+    playerOrder = [];
+    compTurn = true;
+    flash = 0;
+    turnCounter.innerHTML = turn;
+    intervalId = setInterval(gameTurn, 800);
+  }
+
 }
 
+function winGame() {
+  flashColor();
+  turnCounter.innerHTML = "WIN!";
+  on = false;
+  win = true;
+}
