@@ -174,7 +174,7 @@ function check() {
 
   if (good == false) {
     flashColor();
-    turnCounter.innerHTML = "NO!";
+    turnCounter.innerHTML = "GAME OVER!";
     setTimeout(() => {
       turnCounter.innerHTML = turn;
       clearColor();
@@ -197,7 +197,7 @@ function check() {
 
 function winGame() {
   flashColor();
-  turnCounter.innerHTML = "WIN!";
+  turnCounter.innerHTML = "SUCCESS!";
   on = false;
   win = true;
 }
