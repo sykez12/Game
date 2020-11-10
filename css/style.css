@@ -6,8 +6,9 @@
   margin-left: 45px;
   border-style:solid;
   border-color: black;
+  color: white;
   border-width: 2px;
-  text-align: center;
+  background-color: green;
 }
 
 #switch {
