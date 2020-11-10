@@ -11,12 +11,12 @@ let noise = true;
 let on = true;
 let win;
 
-const turnCounter = document.querySelector("#turn");
-const topLeft = document.querySelector("#topleft");
-const topRight = document.querySelector("#topright");
-const bottomLeft = document.querySelector("#bottomleft");
-const bottomRight = document.querySelector("#bottomright");
-const startButton = document.querySelector("#start");
+const turnCounter = document.getElementById("turn");
+const topLeft = document.getElementById("topleft");
+const topRight = document.getElementById("topright");
+const bottomLeft = document.getElementById("bottomleft");
+const bottomRight = document.getElementById("bottomright");
+const startButton = document.getElementById("start");
 
 //Button
 
