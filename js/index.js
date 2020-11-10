@@ -197,7 +197,7 @@ function check() {
 
 function winGame() {
   flashColor();
-  turnCounter.innerHTML = "SUCCESS!";
+  turnCounter.innerHTML = "WINNER!";
   on = false;
   win = true;
 }
