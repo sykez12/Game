@@ -7,9 +7,10 @@
   border-style:solid;
   border-color: black;
   border-width: 2px;
+  text-align: center;
 }
 
-#switches {
+#switch {
   position: absolute;
   font-family: 'Original Surfer', cursive;
   margin-left: 26px;
