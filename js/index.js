@@ -64,7 +64,7 @@ function gameTurn() {
 
 function one() {
     if (noise) {
-        let audio = document.getElementById("clip1");
+        let audio = document.getElementById("sound1");
         audio.play();
     }
     noise = true;
@@ -73,7 +73,7 @@ function one() {
 
 function two() {
     if (noise) {
-        let audio = document.getElementById("clip2");
+        let audio = document.getElementById("sound2");
         audio.play();
     }
     noise = true;
@@ -82,7 +82,7 @@ function two() {
 
 function three() {
     if (noise) {
-        let audio = document.getElementById("clip3");
+        let audio = document.getElementById("sound3");
         audio.play();
     }
     noise = true;
@@ -91,7 +91,7 @@ function three() {
 
 function four() {
     if (noise) {
-        let audio = document.getElementById("clip4");
+        let audio = document.getElementById("sound4");
         audio.play();
     }
     noise = true;
