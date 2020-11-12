@@ -1,15 +1,15 @@
 //Variables
 
-let order = [];
-let playerOrder = [];
-let flash;
-let turn;
-let good;
-let compTurn;
-let intervalId;
-let noise = true;
-let on = true;
-let win;
+let order = [];         //Keeps track of randomly generated computer light order
+let playerOrder = [];   //Order the player presses the lights in
+let flash;              //Number of flashes that have appeared in the game
+let turn;               //keeps track of which turn the user is on
+let good;               //Boolean: Has the player selected all the correct colours
+let compTurn;           //Boolean: Is it the computer's turn or the player's turn
+let intervalId;         //
+let noise = true;       //
+let on = true;          //
+let win;                //Has the player won the game yet
 
 const turnCounter = document.getElementById("turn");
 const topLeft = document.getElementById("topleft");
