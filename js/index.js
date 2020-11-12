@@ -1,5 +1,5 @@
 //Variables
-
+var level = 1;          //The level of the game the user is on
 let order = [];         //Keeps track of randomly generated computer light order
 let playerOrder = [];   //Order the player presses the lights in
 let flash;              //Number of flashes that have appeared in the game
@@ -169,7 +169,7 @@ function check() {
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
     good = false;
 
-  if (playerOrder.length == 3 && good) {
+  if (playerOrder.length == 3 && good && level == 1) {
     winGame();
   }
 
@@ -201,4 +201,5 @@ function winGame() {
   turnCounter.innerHTML = "WINNER!";
   on = false;
   win = true;
+  level++
 }
