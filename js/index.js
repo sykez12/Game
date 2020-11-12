@@ -36,6 +36,7 @@ function play() {
     for (var i = 0; i < 20; i++) {
         order.push(Math.floor(Math.random() *4) +1);
     }
+
     compTurn = true;
 
     intervalId = setInterval(gameTurn, 800);
