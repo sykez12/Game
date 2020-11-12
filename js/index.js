@@ -169,9 +169,9 @@ function check() {
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
     good = false;
 
-  if ((playerOrder.length == 1 && good && level == 1) || (playerOrder.length == 3 && good && level == 2)) {
+  if (good && ((playerOrder.length == 2 && level == 1) || (playerOrder.length == 4 && level == 2)  || (playerOrder.length == 6 && level == 3))) {
     winGame();
-    }
+    }   
 
   if (good == false) {
     flashColor();
