@@ -12,10 +12,10 @@ let on = true;          //
 let win;                //Has the player won the game yet
 
 const turnCounter = document.getElementById("turn");
-const topLeft = document.getElementById("topleft");
-const topRight = document.getElementById("topright");
-const bottomLeft = document.getElementById("bottomleft");
-const bottomRight = document.getElementById("bottomright");
+const green = document.getElementById("green");
+const red = document.getElementById("red");
+const yellow = document.getElementById("yellow");
+const blue = document.getElementById("blue");
 const startButton = document.getElementById("start");
 
 //Button
@@ -69,7 +69,7 @@ function one() {
         audio.play();
     }
     noise = true;
-    topLeft.style.backgroundColor = "lightgreen";
+    green.style.backgroundColor = "lightgreen";
 }
 
 function two() {
@@ -78,7 +78,7 @@ function two() {
         audio.play();
     }
     noise = true;
-    topRight.style.backgroundColor = "tomato";
+    red.style.backgroundColor = "tomato";
 }
 
 function three() {
@@ -87,7 +87,7 @@ function three() {
         audio.play();
     }
     noise = true;
-    bottomLeft.style.backgroundColor = "yellow";
+    yellow.style.backgroundColor = "yellow";
 }
 
 function four() {
@@ -96,24 +96,24 @@ function four() {
         audio.play();
     }
     noise = true;
-    bottomRight.style.backgroundColor = "lightskyblue";
+    blue.style.backgroundColor = "lightskyblue";
 }
 
 function clearColor() {
-    topLeft.style.backgroundColor ="darkgreen";
-    topRight.style.backgroundColor = "darkred";
-    bottomLeft.style.backgroundColor = "goldenrod";
-    bottomRight.style.backgroundColor = "darkblue";
+    green.style.backgroundColor ="darkgreen";
+    red.style.backgroundColor = "darkred";
+    yellow.style.backgroundColor = "goldenrod";
+    blue.style.backgroundColor = "darkblue";
 }
 
 function flashColor() {
-  topLeft.style.backgroundColor = "lightgreen";
-  topRight.style.backgroundColor = "tomato";
-  bottomLeft.style.backgroundColor = "yellow";
-  bottomRight.style.backgroundColor = "lightskyblue";
+  green.style.backgroundColor = "lightgreen";
+  red.style.backgroundColor = "tomato";
+  yellow.style.backgroundColor = "yellow";
+  blue.style.backgroundColor = "lightskyblue";
 }
 
-topLeft.addEventListener('click', (event) => {
+green.addEventListener('click', (event) => {
   if (on) {
     playerOrder.push(1);
     check();
@@ -126,7 +126,7 @@ topLeft.addEventListener('click', (event) => {
   }
 })
 
-topRight.addEventListener('click', (event) => {
+red.addEventListener('click', (event) => {
   if (on) {
     playerOrder.push(2);
     check();
@@ -139,7 +139,7 @@ topRight.addEventListener('click', (event) => {
   }
 })
 
-bottomLeft.addEventListener('click', (event) => {
+yellow.addEventListener('click', (event) => {
   if (on) {
     playerOrder.push(3);
     check();
@@ -152,7 +152,7 @@ bottomLeft.addEventListener('click', (event) => {
   }
 })
 
-bottomRight.addEventListener('click', (event) => {
+blue.addEventListener('click', (event) => {
   if (on) {
     playerOrder.push(4);
     check();
