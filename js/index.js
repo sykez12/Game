@@ -25,6 +25,7 @@ startButton.addEventListener('click', (event) => {
 });
 
 function play() {
+    win = false;
     order = [];
     playerOrder = [];
     flash = 0;
