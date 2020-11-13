@@ -1,4 +1,5 @@
 //Variables
+
 var level = 1;          //The level of the game the user is on
 let order = [];         //Keeps track of randomly generated computer light order
 let playerOrder = [];   //Order the player presses the lights in
@@ -18,101 +19,17 @@ const yellow = document.getElementById("yellow");
 const blue = document.getElementById("blue");
 const startButton = document.getElementById("start");
 
-//Button
+
+
+//Button Event Listener
 
 startButton.addEventListener('click', (event) => {
     play();
 });
 
-function play() {
-    win = false;
-    order = [];
-    playerOrder = [];
-    flash = 0;
-    intervalId = 0;
-    turn = 1;
-    turnCounter.innerHTML = 1;
-    good = true;
-    for (var i = 0; i < 20; i++) {
-        order.push(Math.floor(Math.random() *4) +1);
-    }
 
-    compTurn = true;
 
-    intervalId = setInterval(gameTurn, 800);
-}
-
-function gameTurn() {
-    on = false;
-
-    if (flash == turn) {
-        clearInterval(intervalId);
-        compTurn = false;
-        clearColor();
-        on = true;
-    }
-
-    if (compTurn) {
-        clearColor();
-        setTimeout(() => {
-            if (order[flash] == 1) one();
-            if (order[flash] == 2) two();
-            if (order[flash] == 3) three();
-            if (order[flash] == 4) four();
-            flash++;
-        }, 200)
-    }
-}
-
-function one() {
-    if (noise) {
-        let audio = document.getElementById("sound1");
-        audio.play();
-    }
-    noise = true;
-    green.style.backgroundColor = "lightgreen";
-}
-
-function two() {
-    if (noise) {
-        let audio = document.getElementById("sound2");
-        audio.play();
-    }
-    noise = true;
-    red.style.backgroundColor = "tomato";
-}
-
-function three() {
-    if (noise) {
-        let audio = document.getElementById("sound3");
-        audio.play();
-    }
-    noise = true;
-    yellow.style.backgroundColor = "yellow";
-}
-
-function four() {
-    if (noise) {
-        let audio = document.getElementById("sound4");
-        audio.play();
-    }
-    noise = true;
-    blue.style.backgroundColor = "lightskyblue";
-}
-
-function clearColor() {
-    green.style.backgroundColor ="darkgreen";
-    red.style.backgroundColor = "darkred";
-    yellow.style.backgroundColor = "goldenrod";
-    blue.style.backgroundColor = "darkblue";
-}
-
-function flashColor() {
-  green.style.backgroundColor = "lightgreen";
-  red.style.backgroundColor = "tomato";
-  yellow.style.backgroundColor = "yellow";
-  blue.style.backgroundColor = "lightskyblue";
-}
+//Colour Event Listeners
 
 green.addEventListener('click', (event) => {
   if (on) {
@@ -165,6 +82,100 @@ blue.addEventListener('click', (event) => {
     }
   }
 })
+
+
+
+//Functions
+
+function play() {
+    win = false;
+    order = [];
+    playerOrder = [];
+    flash = 0;
+    intervalId = 0;
+    turn = 1;
+    turnCounter.innerHTML = 1;
+    good = true;
+    for (var i = 0; i < 15; i++) {
+        order.push(Math.floor(Math.random() *4) +1);    //Randomizes a number between 1 and 4
+    }
+
+    compTurn = true;                                    //Starts with computer sequence
+
+    intervalId = setInterval(gameTurn, 1000);           //Runs gameturn function after set amount of time
+}
+
+function gameTurn() {
+    on = false;                                         //Player cannot interact while on=false
+
+    if (flash == turn) {                                //If number of flashes=turncounter number then compturn is over
+        clearInterval(intervalId);
+        compTurn = false;
+        clearColor();
+        on = true;                                      //Now player can interact with the game
+    }
+
+    if (compTurn) {
+        clearColor();
+        setTimeout(() => {                              //Performs this once after set amount of time
+            if (order[flash] == 1) one();
+            if (order[flash] == 2) two();
+            if (order[flash] == 3) three();
+            if (order[flash] == 4) four();
+            flash++;
+        }, 400)
+    }
+}
+
+function one() {
+    if (noise) {
+        let audio = document.getElementById("sound1");
+        audio.play();
+    }
+    noise = true;
+    green.style.backgroundColor = "lightgreen";
+}
+
+function two() {
+    if (noise) {
+        let audio = document.getElementById("sound2");
+        audio.play();
+    }
+    noise = true;
+    red.style.backgroundColor = "tomato";
+}
+
+function three() {
+    if (noise) {
+        let audio = document.getElementById("sound3");
+        audio.play();
+    }
+    noise = true;
+    yellow.style.backgroundColor = "yellow";
+}
+
+function four() {
+    if (noise) {
+        let audio = document.getElementById("sound4");
+        audio.play();
+    }
+    noise = true;
+    blue.style.backgroundColor = "lightskyblue";
+}
+
+function clearColor() {
+    green.style.backgroundColor ="darkgreen";
+    red.style.backgroundColor = "darkred";
+    yellow.style.backgroundColor = "goldenrod";
+    blue.style.backgroundColor = "darkblue";
+}
+
+function flashColor() {
+  green.style.backgroundColor = "lightgreen";
+  red.style.backgroundColor = "tomato";
+  yellow.style.backgroundColor = "yellow";
+  blue.style.backgroundColor = "lightskyblue";
+}
 
 function check() {
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
