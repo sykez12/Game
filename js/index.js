@@ -32,14 +32,14 @@ startButton.addEventListener('click', (event) => {
 //Colour Event Listeners
 
 green.addEventListener('click', (event) => {
-  if (on) {
-    playerOrder.push(1);
-    check();
-    one();
-    if(!win) {
+  if (on) {                                             //Player can click if on=true
+    playerOrder.push(1);                                //Clicking green will push 1 onto playerOrder array
+    check();                                            //Check to see if player was correct
+    one();                                              //Then run appropriate function
+    if(!win) {                                          //If player has not won yet, the colour will be cleared after set amount of time
       setTimeout(() => {
         clearColor();
-      }, 300);
+      }, 200);
     }
   }
 })
@@ -52,7 +52,7 @@ red.addEventListener('click', (event) => {
     if(!win) {
       setTimeout(() => {
         clearColor();
-      }, 300);
+      }, 200);
     }
   }
 })
@@ -65,7 +65,7 @@ yellow.addEventListener('click', (event) => {
     if(!win) {
       setTimeout(() => {
         clearColor();
-      }, 300);
+      }, 200);
     }
   }
 })
@@ -78,7 +78,7 @@ blue.addEventListener('click', (event) => {
     if(!win) {
       setTimeout(() => {
         clearColor();
-      }, 300);
+      }, 200);
     }
   }
 })
@@ -177,24 +177,23 @@ function flashColor() {
   blue.style.backgroundColor = "lightskyblue";
 }
 
-function check() {
-  if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
+function check() {                                                          
+  if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])    //If the last colour a player clicked is not equal to the actual colour then they lose
     good = false;
 
   if (good && ((playerOrder.length == 2 && level == 1) || (playerOrder.length == 4 && level == 2)  || (playerOrder.length == 6 && level == 3))) {
-    winGame();
+    winGame();                                  //Parameters fo winning the game for each level
     }   
 
-  if (good == false) {
-    flashColor();
+  if (good == false) {                          //If player is incorrect, perform these actions
+    flashColor();                               
     turnCounter.innerHTML = "GAME OVER!";
     setTimeout(() => {
-      turnCounter.innerHTML = turn;
       clearColor();
       play();
-    }, 800);
+    }, 1500);
 
-    noise = false;
+    noise = false;                              //If player is incorrect, the sound will not play
   }
 
   if (turn == playerOrder.length && good && !win) {
