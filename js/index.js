@@ -103,7 +103,7 @@ function play() {
 
     compTurn = true;                                    //Starts with computer sequence
 
-    intervalId = setInterval(gameTurn, 800);           //Runs gameturn function after set amount of time
+    intervalId = setInterval(gameTurn, 800);            //Runs gameturn function after set amount of time
 }
 
 function gameTurn() {
@@ -182,7 +182,7 @@ function check() {
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])    //If the last colour a player clicked is not equal to the actual colour then they lose
     good = false;
 
-  if (good && ((playerOrder.length == 5 && level == 1) || (playerOrder.length == 10 && level == 2)  || (playerOrder.length == 15 && level == 3))) {
+  if (good && ((playerOrder.length == 2 && level == 1) || (playerOrder.length == 3 && level == 2)  || (playerOrder.length == 4 && level == 3))) {
     winGame();                                          //Parameters for winning the game for each level
     }   
 
