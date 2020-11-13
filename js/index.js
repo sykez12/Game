@@ -1,6 +1,6 @@
 //Variables
 
-var level = 1;          //The level of the game the user is on
+let level = 1;          //The level of the game the user is on
 let order = [];         //Keeps track of randomly generated computer light order
 let playerOrder = [];   //Order the player presses the lights in
 let flash;              //Number of flashes that have appeared in the game
@@ -21,14 +21,6 @@ const startButton = document.getElementById("start");
 
 
 
-//Button Event Listener
-
-startButton.addEventListener('click', (event) => {
-    play();
-});
-
-
-
 //Colour Event Listeners
 
 green.addEventListener('click', (event) => {
@@ -39,7 +31,7 @@ green.addEventListener('click', (event) => {
     if(!win) {                                          //If player has not won yet, the colour will be cleared after set amount of time
       setTimeout(() => {
         clearColor();
-      }, 200);
+      }, 300);
     }
   }
 })
@@ -52,7 +44,7 @@ red.addEventListener('click', (event) => {
     if(!win) {
       setTimeout(() => {
         clearColor();
-      }, 200);
+      }, 300);
     }
   }
 })
@@ -65,7 +57,7 @@ yellow.addEventListener('click', (event) => {
     if(!win) {
       setTimeout(() => {
         clearColor();
-      }, 200);
+      }, 300);
     }
   }
 })
@@ -78,10 +70,19 @@ blue.addEventListener('click', (event) => {
     if(!win) {
       setTimeout(() => {
         clearColor();
-      }, 200);
+      }, 300);
     }
   }
 })
+
+
+
+//Button Event Listener
+
+startButton.addEventListener('click', (event) => {
+    clearInterval(intervalId);
+    play();
+});
 
 
 
@@ -102,7 +103,7 @@ function play() {
 
     compTurn = true;                                    //Starts with computer sequence
 
-    intervalId = setInterval(gameTurn, 1000);           //Runs gameturn function after set amount of time
+    intervalId = setInterval(gameTurn, 800);           //Runs gameturn function after set amount of time
 }
 
 function gameTurn() {
@@ -123,7 +124,7 @@ function gameTurn() {
             if (order[flash] == 3) three();
             if (order[flash] == 4) four();
             flash++;
-        }, 400)
+        }, 200)
     }
 }
 
@@ -181,22 +182,23 @@ function check() {
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])    //If the last colour a player clicked is not equal to the actual colour then they lose
     good = false;
 
-  if (good && ((playerOrder.length == 2 && level == 1) || (playerOrder.length == 4 && level == 2)  || (playerOrder.length == 6 && level == 3))) {
-    winGame();                                  //Parameters fo winning the game for each level
+  if (good && ((playerOrder.length == 5 && level == 1) || (playerOrder.length == 10 && level == 2)  || (playerOrder.length == 15 && level == 3))) {
+    winGame();                                          //Parameters for winning the game for each level
     }   
 
-  if (good == false) {                          //If player is incorrect, perform these actions
+  if (good == false) {                                  //If player is incorrect, perform these actions
     flashColor();                               
     turnCounter.innerHTML = "GAME OVER!";
     setTimeout(() => {
+      turnCounter.innerHTML = turn;
       clearColor();
       play();
-    }, 1500);
+    }, 800);
 
-    noise = false;                              //If player is incorrect, the sound will not play
+    noise = false;                                      //If player is incorrect, the sound will not play
   }
 
-  if (turn == playerOrder.length && good && !win) {
+  if (turn == playerOrder.length && good && !win) {     //If player is correct, but has not yet won, perform these actions
     turn++;
     playerOrder = [];
     compTurn = true;
