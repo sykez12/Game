@@ -1,6 +1,6 @@
 //Variables
 var level = 1; // The level of the game the user is on
-var order = []; // Keeps track of randomly generated computer light order
+let order = []; // Keeps track of randomly generated computer light order
 var playerOrder = []; // Order the player presses the lights in
 var flash; // Number of flashes that have appeared in the game
 var turn; // keeps track of which turn the user is on

@@ -110,5 +110,5 @@ function winGame() {
     win = true;
     level++;
     document.getElementById('level-number').innerHTML = `Level ${level}`;
-    alert(`Congratulations, you are on level ${level}. Press Start to continue.`);
+    alert(`Congratulations, you have completed level ${level-1}. Press Start to begin level ${level}.`);
 }

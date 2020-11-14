@@ -1,4 +1,7 @@
-
+h2 {
+    font-size: 30px;
+    text-align: center;
+}
 
 .button {
   border-radius: 40% !important;
@@ -52,7 +55,6 @@
   border-style: solid;
   border-width: 8px;
   margin: 0 auto;
-  margin-top: 60px;
 }
 
 #green {
