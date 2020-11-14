@@ -1,4 +1,5 @@
 // --------------------- Noise helpers ---------------------
+
 function playNoise(soundElementId) {
     if (noise) {
         let audio = document.getElementById(soundElementId);
@@ -28,6 +29,7 @@ function four() {
 }
 
 // --------------------- Color helpers ---------------------
+
 function clearColor() {
     green.style.backgroundColor = "darkgreen";
     red.style.backgroundColor = "darkred";
@@ -68,6 +70,7 @@ startButton.addEventListener('click', (event) => {
 });
 
 // --------------------- Game logic helpers ---------------------
+
 /*
 Increase the number of orders by the number of turns per level = turnLevelMultiplier
 Generate turnLevelMultiplier random numbers

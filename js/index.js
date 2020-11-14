@@ -1,4 +1,5 @@
 // --------------------- Game logic  ---------------------
+
 /*
 Randomises the button sequence and sets the interval for the gameturn
 */
@@ -41,11 +42,11 @@ function gameTurn() {
 }
 
 function buttonClickedEvent(btnFunction, orderNumber) {
-    if (playerTurn) { //Player can click if on=true
-        playerOrder.push(orderNumber); //Clicking green will push 1 onto playerOrder array
-        check(); //Check to see if player was correct
-        btnFunction(); //Then run appropriate function
-        if (!win) { //If player has not won yet, the colour will be cleared after set amount of time
+    if (playerTurn) { // Player can click if
+        playerOrder.push(orderNumber); // Clicking green will push 1 onto playerOrder array
+        check(); // Check to see if player was correct
+        btnFunction(); // Then run appropriate function
+        if (!win) { // If player has not won yet, the colour will be cleared after set amount of time
             setTimeout(() => {
                 clearColor();
             }, 300);
@@ -63,7 +64,7 @@ function isMaxTurnReached() {
 }
 
 function check() {
-    //If the last colour a player clicked is not equal to the actual colour then they lose
+    // If the last colour a player clicked is not equal to the actual colour then they lose
     if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1]) 
         correctSelection = false;
 
@@ -71,7 +72,7 @@ function check() {
         winGame(); //Parameters for winning the game for each level
     }
 
-    //If player is incorrect, perform these actions
+    // If player is incorrect, perform these actions
     if (correctSelection == false) { 
         loseGame();
     }

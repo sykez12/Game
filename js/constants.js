@@ -9,7 +9,7 @@ var compTurn; // Boolean: Is it the computer's turn or the player's turn
 var intervalId; //
 var noise = true; //
 var playerTurn = false; // A flag dictating whether the user can press the buttons or not
-var win; //Has the player won the game yet
+var win; // Has the player won the game yet
 const turnLevelMultiplier = 2;
 const turnCounter = document.getElementById("turn");
 const green = document.getElementById("green");
